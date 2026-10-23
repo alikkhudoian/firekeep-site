@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>FireKeep · Keep the fire</title>
-<meta name="description" content="Six small rules a day. Strength and protein. FireKeep is free on iPhone, coming soon to Android.">
+<meta name="description" content="Strength training and protein, made simple. Small daily rules that keep your fire going. FireKeep is free on iPhone, coming soon to Android.">
 <meta name="theme-color" content="#0a0806">
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="styles.css">
@@ -18,14 +18,14 @@
 
 <main id="top">
 
-<!-- 1 HERO: the app on a phone, centered -->
+<!-- 1 HERO: headline, what the app does, a hand holding the phone, store badges -->
 <section class="hero" aria-labelledby="h1">
   <h1 id="h1">Keep <em>the fire.</em></h1>
-  <p class="sub">Six small rules a day. Strength and protein.</p>
-  <!-- device slot: swap .frame for a hand-holding-phone photo later; the screen keeps the same box -->
-  <figure class="device">
+  <p class="lede"><span>Strength training and protein, made simple.</span> <span>Small daily rules that keep your fire going.</span></p>
+  <!-- transparent cut-out (hand + iPhone + wrist). --phone-x / --phone-y in styles.css = where the phone's centre sits in this image -->
+  <figure class="hand">
     <div class="glow" aria-hidden="true"></div>
-    <div class="frame"><img class="screen" src="assets/img/app/hero-today.webp" alt="FireKeep Today screen: Keep 30, day 12, the six daily rules" width="720" height="1564"></div>
+    <img src="assets/img/app/hero-hand.webp" alt="A hand holding an iPhone with the FireKeep Today screen" width="900" height="1600" fetchpriority="high">
   </figure>
   <div class="stores"><a class="badge" href="#get" data-store="ios" aria-label="Download on the App Store"><svg class="ap" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a><span class="badge soon" data-store="android" aria-label="Google Play, coming soon"><svg class="gp" viewBox="0 0 24 26" aria-hidden="true"><path d="M1.5 1.2 13.4 13 1.5 24.8c-.3-.2-.5-.6-.5-1.1V2.3c0-.5.2-.9.5-1.1z" fill="#00a0ff"/><path d="M17.4 17 13.4 13l4-4 4.8 2.7c1.4.8 1.4 2 0 2.8z" fill="#ffbc00"/><path d="M17.4 17 13.4 13 1.5 24.8c.4.4 1.1.5 1.9.1z" fill="#ff3a44"/><path d="M17.4 9 3.4 1.1C2.6.7 1.9.8 1.5 1.2L13.4 13z" fill="#00f076"/></svg><span><small>Coming soon</small><b>Google Play</b></span></span></div>
 </section>
@@ -61,13 +61,32 @@
   <h2>Keep<br><em>the fire.</em></h2>
 </section>
 
-<!-- 4 THE APP -->
-<section class="sec app" aria-label="The app">
-  <div class="shots">
-    <img src="assets/img/app/01-challenge.webp" alt="Your challenge: daily rules, one streak" width="660" height="1434" loading="lazy">
-    <img src="assets/img/app/02-rules.webp" alt="Small rules, big change: train, protein, water, steps, sleep" width="660" height="1434" loading="lazy">
-    <img src="assets/img/app/05-protein.webp" alt="Protein made simple: a daily target in simple meals" width="660" height="1434" loading="lazy">
-    <img src="assets/img/app/06-fuel.webp" alt="Fuel at a glance: protein, carbs, fat and water" width="660" height="1434" loading="lazy">
+<!-- 4 THE APP: one phone stays pinned while you scroll; each step swaps the screen and the caption.
+     Review hook: #app=1..5 jumps to a step. Reduced motion: a plain list. -->
+<section class="tour" id="app" aria-label="The app">
+  <div class="tour-stage">
+    <div class="bezel" aria-hidden="true"></div>
+    <article class="step on">
+      <div class="cap"><h3>Your day, lit&nbsp;up.</h3><p>Small daily rules. Tick them off one by one.</p></div>
+      <div class="scr"><img src="assets/img/app/hero-today.webp" alt="Today screen: your daily rules for training, protein, water, steps and sleep" width="720" height="1564" loading="lazy"></div>
+    </article>
+    <article class="step">
+      <div class="cap"><h3>Keep the streak.</h3><p>Pick a challenge. Light up a square every day.</p></div>
+      <div class="scr"><img src="assets/img/app/tour-challenges.webp" alt="Challenges screen: your streak, one square for each day" width="720" height="1564" loading="lazy"></div>
+    </article>
+    <article class="step">
+      <div class="cap"><h3>Clear moves.</h3><p>Every move shown, with sets and reps.</p></div>
+      <div class="scr"><img src="assets/img/app/tour-workout.webp" alt="Workout screen: a demonstrator shows the session, with each move, its sets and reps" width="720" height="1564" loading="lazy"></div>
+    </article>
+    <article class="step">
+      <div class="cap"><h3>A plan made for&nbsp;you.</h3><p>Gym, home or outdoors. Full session or short.</p></div>
+      <div class="scr"><img src="assets/img/app/tour-train.webp" alt="Train screen: this week's plan, with gym, home and outdoor options" width="720" height="1564" loading="lazy"></div>
+    </article>
+    <article class="step">
+      <div class="cap"><h3>Protein, made simple.</h3><p>Protein, carbs, fat and water at a glance.</p></div>
+      <div class="scr"><img src="assets/img/app/tour-fuel.webp" alt="Fuel screen: protein, carbs, fat and water for today" width="720" height="1564" loading="lazy"></div>
+    </article>
+    <div class="dots" role="group" aria-label="App tour steps"><button type="button" aria-label="Today" aria-current="step"></button><button type="button" aria-label="Challenges"></button><button type="button" aria-label="Workout"></button><button type="button" aria-label="Train"></button><button type="button" aria-label="Fuel"></button></div>
   </div>
 </section>
 

@@ -12,6 +12,9 @@
   const hero = document.querySelector('.hero');
   const nav = document.querySelector('.nav');
   const final = document.getElementById('get');
+  const tour = document.getElementById('app');
+  const steps = [...tour.querySelectorAll('.step')];
+  const dots = [...tour.querySelectorAll('.dots button')];
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
@@ -55,23 +58,51 @@
     return clamp(-r.top / (r.height - innerHeight));
   }
 
+  // the app tour: the phone is pinned while the section scrolls past; its scroll range is split into equal steps
+  let cur = -1;
+  function setStep(n) {
+    if (n === cur) return;
+    cur = n;
+    steps.forEach((s, i) => { s.classList.toggle('on', i === n); s.classList.toggle('past', i < n); });
+    dots.forEach((d, i) => i === n ? d.setAttribute('aria-current', 'step') : d.removeAttribute('aria-current'));
+  }
+  const tourTravel = () => tour.offsetHeight - innerHeight;
+  // scroll position for the middle of step i (0-based)
+  const stepY = i => tour.offsetTop + (i + 0.5) / steps.length * tourTravel();
+  function tourStep() {
+    const p = clamp(-tour.getBoundingClientRect().top / tourTravel());
+    return Math.min(steps.length - 1, Math.floor(p * steps.length));
+  }
+  dots.forEach((d, i) => d.addEventListener('click', () => scrollTo({ top: stepY(i), behavior: reduce ? 'auto' : 'smooth' })));
+
   // scroll events already arrive once per frame, so update right away
   function onScroll() {
-    if (!reduce) render(progress());
+    if (!reduce) { render(progress()); setStep(tourStep()); }
     const pastHero = hero.getBoundingClientRect().bottom < 0;
     const atEnd = final.getBoundingClientRect().top < innerHeight;
-    sticky.classList.toggle('show', pastHero && !atEnd);
+    // the bar would sit on top of the pinned phone, so it steps aside while the tour is on screen
+    const t = tour.getBoundingClientRect();
+    const inTour = !reduce && t.top < innerHeight * 0.5 && t.bottom > innerHeight * 0.5;
+    sticky.classList.toggle('show', pastHero && !atEnd && !inTour);
     nav.classList.toggle('solid', scrollY > 40);
   }
 
   render(reduce ? 0.6 : 0);
   addEventListener('scroll', onScroll, { passive: true });
   addEventListener('resize', onScroll);
+  onScroll();
 
-  // review screenshots: #p=0.5 jumps into the story, #s=<id> to a section
+  // review screenshots: #p=0.5 jumps into the story, #app=3 to a step of the app tour, #s=<id> to a section
   const h = new URLSearchParams(location.hash.slice(1));
-  if (h.has('p') || h.has('s') || location.search.includes('shot')) document.documentElement.classList.add('shot');
-  if (h.has('p')) {
+  if (h.has('p') || h.has('s') || h.has('app') || location.search.includes('shot')) {
+    document.documentElement.classList.add('shot');
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  }
+  if (h.has('app')) {
+    document.documentElement.style.scrollBehavior = 'auto';
+    const n = clamp(Math.round(+h.get('app')) || 1, 1, steps.length) - 1;
+    scrollTo(0, reduce ? steps[n].getBoundingClientRect().top + scrollY - 60 : stepY(n)); onScroll();
+  } else if (h.has('p')) {
     document.documentElement.style.scrollBehavior = 'auto';
     scrollTo(0, story.offsetTop + +h.get('p') * (story.offsetHeight - innerHeight)); onScroll();
   } else if (h.has('s')) {

@@ -38,18 +38,20 @@ em{font-style:normal;color:var(--heat)}
 .badge.mini b{font-size:16px}.badge.mini small{font-size:9px}.badge.mini .ap{width:20px;height:20px}.badge.mini .gp{width:18px;height:20px}
 @media (max-width:420px){.stores .badge:not(.mini){padding:8px 13px 8px 10px;min-height:48px;gap:8px}.stores .badge:not(.mini) b{font-size:17px}.stores .badge:not(.mini) .ap{width:22px;height:22px}.stores .badge:not(.mini) .gp{width:20px;height:22px}}
 
-/* hero: headline, the app on a phone (centered), store badges */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:78px var(--gut) 28px;overflow:hidden;
-  background:radial-gradient(70% 45% at 50% 62%,rgba(255,59,31,.22),transparent 70%),radial-gradient(60% 40% at 15% 0%,rgba(31,42,31,.5),transparent 70%)}
-.hero h1{font-size:clamp(54px,15vw,150px)}
-.sub{font-size:16px;color:#d6d0c7;margin:10px 0 22px}
-.device{position:relative;margin:0 0 24px;width:clamp(190px,calc((100svh - 330px)*.46),340px)}
-.glow{position:absolute;left:50%;top:55%;width:150%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
-  background:radial-gradient(closest-side,rgba(255,59,31,.7),rgba(255,59,31,.25) 50%,transparent 75%);filter:blur(6px);animation:breathe 4s ease-in-out infinite;pointer-events:none}
-@keyframes breathe{0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(.96)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.04)}}
-.frame{position:relative;border-radius:15% / 6.9%;padding:3%;background:linear-gradient(145deg,#3a3633,#141210 40%,#2a2724);box-shadow:0 0 0 1px #4a4541,0 30px 70px rgba(0,0,0,.65)}
-.screen{width:100%;height:auto;border-radius:12.6% / 5.8%;display:block}
-.hero .stores{justify-content:center}
+/* hero: headline, what the app does, a hand holding the phone (wrist runs off the bottom), store badges.
+   --phone-x / --phone-y: the phone's centre inside hero-hand.webp (0-1), so the phone itself sits centred. */
+.hero{--phone-x:.35;--phone-y:.31;--bleed:150px;position:relative;height:100svh;min-height:640px;max-height:1080px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:80px var(--gut) 24px;overflow:hidden;
+  background:radial-gradient(60% 40% at 15% 0%,rgba(31,42,31,.5),transparent 70%)}
+.hero h1{position:relative;z-index:2;font-size:clamp(54px,15vw,150px)}
+.lede{position:relative;z-index:2;max-width:24em;margin:12px auto 0;font-size:16px;line-height:1.45;color:#d6d0c7;text-wrap:balance}
+.lede span{display:block}
+.hand{position:relative;flex:1 1 auto;min-height:0;width:100%;margin:6px 0 0}
+.hand img{position:absolute;top:0;left:50%;height:calc(100% + var(--bleed));width:auto;max-width:none;translate:calc(var(--phone-x)*-100%) 0;user-select:none;
+  -webkit-mask-image:linear-gradient(180deg,#000 58%,transparent 90%);mask-image:linear-gradient(180deg,#000 58%,transparent 90%)}
+.glow{position:absolute;left:50%;top:calc((100% + var(--bleed))*var(--phone-y));height:calc((100% + var(--bleed))*.78);aspect-ratio:1;translate:-50% -50%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(255,59,31,.85),rgba(255,59,31,.34) 46%,rgba(255,59,31,.08) 68%,transparent 80%);animation:breathe 5s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.7;scale:.95}50%{opacity:1;scale:1.04}}
+.hero .stores{position:relative;z-index:2;justify-content:center;margin-top:12px}
 
 /* story: the ember grows into the demonstrator, the days fill */
 .story{position:relative;height:500svh}
@@ -82,11 +84,35 @@ em{font-style:normal;color:var(--heat)}
 .fire h2{font-size:clamp(96px,30vw,240px);max-width:1160px;width:100%;margin:0 auto}
 .fire h2 em{color:var(--bone)}
 
+/* the app: one phone stays pinned, each step wipes in the next screen and swaps the caption.
+   --S = screen width; the bezel and the screens share one grid cell, so they line up without absolute positioning. */
+.tour{--S:min(calc((100svh - 290px)/2.2),76vw,330px);--b:calc(var(--S)*.032);--ti:max(2px,calc(var(--S)*.012));--r:calc(var(--S)*.13);position:relative;height:460svh}
+.tour-stage{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;justify-items:center;align-content:center;row-gap:14px;
+  grid-template-areas:"cap" "dots" "phone";padding:72px var(--gut) 18px;
+  background:radial-gradient(45% 38% at 50% 64%,rgba(255,59,31,.16),transparent 72%)}
+.step{display:contents}
+.cap{grid-area:cap;align-self:end;text-align:center;width:min(100%,24em);opacity:0;transform:translateY(14px);transition:opacity .3s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
+.step.on .cap{opacity:1;transform:none;transition-delay:.12s}
+.cap h3{margin:0;font:900 44px/.9 var(--display);text-transform:uppercase;letter-spacing:.2px;text-wrap:balance}
+.cap p{margin:8px 0 0;font-size:15px;line-height:1.4;color:#d6d0c7;text-wrap:pretty}
+.bezel{grid-area:phone;position:relative;box-sizing:content-box;width:calc(var(--S) + 2*var(--b));height:calc(var(--S)*2.1727 + 2*var(--b));border:var(--ti) solid transparent;border-radius:calc(var(--r) + var(--b) + var(--ti));
+  background:linear-gradient(#030303,#030303) padding-box,linear-gradient(140deg,#9a938b 0%,#46413c 14%,#211f1d 40%,#2c2926 66%,#5e5852 88%,#a39c94 100%) border-box;
+  box-shadow:0 0 0 1px rgba(255,255,255,.06),0 50px 90px -30px rgba(0,0,0,.9),0 0 110px rgba(255,59,31,.16)}
+.bezel::before,.bezel::after{content:"";position:absolute;width:3px;border-radius:2px;background:linear-gradient(90deg,#5e5852,#8f8881)}
+.bezel::before{right:100%;margin-right:var(--ti);top:17%;height:5%;box-shadow:0 calc(var(--S)*.2) 0 #6c665f,0 calc(var(--S)*.36) 0 #6c665f}
+.bezel::after{left:100%;margin-left:var(--ti);top:26%;height:11%}
+.scr{grid-area:phone;z-index:1;width:var(--S);aspect-ratio:1320/2868;overflow:hidden;border-radius:var(--r);clip-path:inset(100% 0 0 0 round var(--r));transition:clip-path .7s cubic-bezier(.65,0,.25,1)}
+.scr img{width:100%;height:100%;object-fit:cover;transform:translateY(7%);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.step.on .scr,.step.past .scr{clip-path:inset(0 0 0 0 round var(--r))}
+.step.on .scr img,.step.past .scr img{transform:none}
+.dots{grid-area:dots;display:flex;gap:2px}
+.dots button{width:24px;height:24px;padding:0;border:0;background:none;display:grid;place-items:center;cursor:pointer}
+.dots button::before{content:"";width:7px;height:7px;border-radius:99px;background:#3d3833;transition:width .3s ease,background .3s ease}
+.dots button[aria-current]::before{width:24px;background:var(--heat)}
+.dots button:focus-visible{outline:2px solid var(--heat);outline-offset:2px;border-radius:6px}
+
 /* sections */
 .sec{padding:72px var(--gut);max-width:1240px;margin:0 auto}
-.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1*var(--gut));padding:0 var(--gut) 8px;scrollbar-width:none}
-.shots::-webkit-scrollbar{display:none}
-.shots img{width:72vw;max-width:300px;flex:none;border-radius:22px;scroll-snap-align:center}
 .cards{display:grid;gap:14px}
 .cards figure{margin:0;background:var(--coal2);border-radius:18px;overflow:hidden}
 .cards img{width:100%;aspect-ratio:720/380;object-fit:cover}
@@ -113,16 +139,34 @@ em{font-style:normal;color:var(--heat)}
 @media (min-width:900px){
   :root{--gut:56px}
   .sticky-cta{display:none}
-  .hero{padding-top:96px}
+  .hero{padding-top:92px}
   .hero h1{font-size:min(130px,13vh)}
-  .device{width:clamp(220px,calc((100svh - 360px)*.46),340px)}
+  .lede{font-size:18px;margin-top:14px}
   .stage-grid{flex-direction:row;align-items:center;justify-content:center;gap:64px;padding:90px var(--gut) 40px}
   .win{--W:min(46vw,640px);margin:0}
   .panel{width:380px}
-  .shots{overflow:visible;margin:0;padding:0;justify-content:center}
-  .shots img{width:calc((100% - 42px)/4);max-width:none}
+  .tour{--S:min(calc((100svh - 160px)/2.2),350px)}
+  .tour-stage{grid-template-columns:minmax(0,1fr) auto minmax(0,.6fr);grid-template-rows:1fr auto auto 1fr;grid-template-areas:". phone ." "cap phone ." "dots phone ." ". phone .";
+    column-gap:clamp(48px,6vw,104px);align-content:stretch;padding:84px var(--gut) 32px;background:radial-gradient(32% 46% at 50% 55%,rgba(255,59,31,.16),transparent 72%)}
+  .cap{justify-self:end;align-self:end;text-align:left;width:min(100%,470px)}
+  .cap h3{font-size:clamp(64px,6.4vw,100px)}
+  .cap p{margin-top:16px;font-size:19px}
+  .dots{justify-self:end;width:min(100%,470px);margin-top:26px;margin-left:-8px}
   .cards{grid-template-columns:repeat(3,1fr)}
   .qr{display:flex}
+}
+/* wide screens: text on the left, the hand on the right, both hugging the centre line */
+@media (min-width:1000px) and (min-height:560px){
+  .hero{--bleed:0px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:1fr auto auto auto 1fr;
+    grid-template-areas:". hand" "h1 hand" "lede hand" "stores hand" ". hand";column-gap:3vw;justify-items:start;text-align:left;padding:0 var(--gut);max-height:none}
+  .hero h1,.lede,.hero .stores{justify-self:end;width:min(100%,520px)}
+  .hero h1{grid-area:h1;font-size:min(150px,16vh,10.5vw)}
+  .hero h1 em{display:block}
+  .lede{grid-area:lede;max-width:none;margin:22px 0 0;font-size:20px;text-wrap:pretty}
+  .hero .stores{grid-area:stores;justify-content:flex-start;margin-top:34px}
+  .hand{grid-area:hand;align-self:stretch;height:auto;margin:0}
+  .hand img{top:11svh;left:30%;height:104svh}
+  .glow{top:calc(11svh + 104svh*var(--phone-y));left:30%;height:90svh}
 }
 
 /* reduced motion: the story becomes a plain section */
@@ -131,6 +175,18 @@ em{font-style:normal;color:var(--heat)}
   .glow{animation:none}
   .story{height:auto}
   .stage{position:relative;height:auto;min-height:100svh}
+  .tour{height:auto}
+  .tour-stage{position:relative;height:auto;display:flex;flex-direction:column;align-items:center;gap:72px;padding:88px var(--gut);background:none}
+  .bezel,.dots{display:none}
+  .step{display:flex;flex-direction:column;align-items:center;gap:22px}
+  .cap,.step.on .cap{opacity:1;transform:none;justify-self:auto;text-align:center;width:min(100%,24em)}
+  .scr{box-sizing:content-box;aspect-ratio:auto;padding:var(--b);border:var(--ti) solid transparent;border-radius:calc(var(--r) + var(--b) + var(--ti));clip-path:none;
+    background:linear-gradient(#030303,#030303) padding-box,linear-gradient(140deg,#9a938b,#2c2926 40%,#5e5852 88%,#a39c94) border-box;box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
+  .scr img{height:auto;transform:none;border-radius:var(--r)}
+}
+@media (prefers-reduced-motion:reduce) and (min-width:900px){
+  .step{flex-direction:row;gap:clamp(48px,6vw,104px)}
+  .cap,.step.on .cap{align-self:center;text-align:left;width:min(40vw,470px)}
 }
 
 /* review screenshots: no transitions; full-page capture hides fixed chrome after the first screen */
