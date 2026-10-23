@@ -3,197 +3,97 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>FireKeep · Keep 30, the 30-day challenge</title>
-<meta name="description" content="Keep 30 is a kind 30-day challenge: a short workout on your plan days, your protein, water, steps, sleep and one proof photo a day. Free, no account, your data stays on your phone.">
+<title>FireKeep · Keep the fire</title>
+<meta name="description" content="Six small rules a day. Strength and protein. FireKeep is free on iPhone, coming soon to Android.">
 <meta name="theme-color" content="#0a0806">
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="proto">Prototype · not live · people are placeholders</div>
-
 <header class="nav">
   <a class="wm" href="#top" aria-label="FireKeep home"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#000"/><path d="M15 15h70v17H36v6h30v14H36v33H15z" fill="#f3f0eb"/><rect x="42" y="57" width="43" height="28" fill="#ff3b1f"/></svg><span>FIREKEEP</span></a>
-  <nav class="links" aria-label="Sections">
-    <a href="#rules">The rules</a><a href="#win">How you win</a><a href="#protein">Protein</a><a href="#faq">FAQ</a>
-  </nav>
-  <a class="pill" href="#get">Start Day 1</a>
+  <a class="pill" href="#get">Get the app</a>
 </header>
 
 <main id="top">
 
-<!-- 1 HERO: the challenge -->
+<!-- 1 HERO: one ember, one line -->
 <section class="hero" aria-labelledby="h1">
-  <div class="hero-grid" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="spark" aria-hidden="true"><i class="ember"></i><b style="--x:-30px;--d:0s"></b><b style="--x:12px;--d:1s"></b><b style="--x:34px;--d:2s"></b><b style="--x:-8px;--d:2.9s"></b></div>
   <div class="hero-copy">
-    <p class="kicker">The 30-day challenge</p>
-    <h1 id="h1">Keep 30.<br><em>Keep the fire.</em></h1>
-    <p class="sub">Six small rules a day for 30 days.<br>Hard enough to change you.</p>
-    <div class="cta-row"><div class="stores"><a class="badge" href="#get" data-store="ios" aria-label="Download on the App Store"><svg class="ap" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a><a class="badge" href="#get" data-store="android" aria-label="Get it on Google Play"><svg class="gp" viewBox="0 0 24 26" aria-hidden="true"><path d="M1.5 1.2 13.4 13 1.5 24.8c-.3-.2-.5-.6-.5-1.1V2.3c0-.5.2-.9.5-1.1z" fill="#00a0ff"/><path d="M17.4 17 13.4 13l4-4 4.8 2.7c1.4.8 1.4 2 0 2.8z" fill="#ffbc00"/><path d="M17.4 17 13.4 13 1.5 24.8c.4.4 1.1.5 1.9.1z" fill="#ff3a44"/><path d="M17.4 9 3.4 1.1C2.6.7 1.9.8 1.5 1.2L13.4 13z" fill="#00f076"/></svg><span><small>COMING SOON ON</small><b>Google Play</b></span></a></div></div>
-    <ul class="proof"><li>Free</li><li>Rest days never break your streak</li><li>No account</li></ul>
+    <h1 id="h1">Keep<br><em>the fire.</em></h1>
+    <p class="sub">Six small rules a day. Strength and protein.</p>
+    <div class="stores"><a class="badge" href="#get" data-store="ios" aria-label="Download on the App Store"><svg class="ap" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a><span class="badge soon" data-store="android" aria-label="Google Play, coming soon"><svg class="gp" viewBox="0 0 24 26" aria-hidden="true"><path d="M1.5 1.2 13.4 13 1.5 24.8c-.3-.2-.5-.6-.5-1.1V2.3c0-.5.2-.9.5-1.1z" fill="#00a0ff"/><path d="M17.4 17 13.4 13l4-4 4.8 2.7c1.4.8 1.4 2 0 2.8z" fill="#ffbc00"/><path d="M17.4 17 13.4 13 1.5 24.8c.4.4 1.1.5 1.9.1z" fill="#ff3a44"/><path d="M17.4 9 3.4 1.1C2.6.7 1.9.8 1.5 1.2L13.4 13z" fill="#00f076"/></svg><span><small>Coming soon</small><b>Google Play</b></span></span></div>
   </div>
-  <img class="hero-phone" src="assets/img/scr-keep30.webp" alt="The Keep 30 screen in FireKeep: day 1 of 30 and today's rules" width="460" height="1000">
-  <p class="scroll-hint" aria-hidden="true">Scroll to keep it lit ↓</p>
+  <p class="scroll-hint" aria-hidden="true">Scroll ↓</p>
 </section>
 
-<!-- 2 THE 30 DAYS (scroll-driven) -->
-<section class="story" id="story" aria-label="Keep 30, day by day">
+<!-- 2 THE STORY: the ember grows into the demonstrator, the days light up -->
+<section class="story" id="story" aria-label="Day by day">
   <div class="stage">
     <div class="heat" aria-hidden="true"></div>
     <div class="redbg" aria-hidden="true"></div>
-
     <div class="stage-grid">
-      <div class="board">
-        <div class="dayhead"><div class="day"><small>Day</small><span class="num">1</span></div><p class="of">of 30</p></div>
-        <div class="g30" aria-hidden="true"></div>
-      </div>
+      <figure class="win" aria-hidden="true">
+        <img class="clip on" src="assets/img/clips/slot-sit-to-stand.webp" alt="">
+        <img class="clip" src="assets/img/clips/slot-glute-bridge.webp" alt="" loading="lazy">
+        <img class="clip" src="assets/img/clips/slot-band-pull-apart.webp" alt="" loading="lazy">
+        <figcaption class="who"></figcaption>
+      </figure>
       <div class="panel">
-        <ul class="ticks" aria-hidden="true">
-          <li data-r="workout"><i></i><span class="lbl">Workout</span></li>
-          <li data-r="protein"><i></i><span>Protein</span></li>
-          <li data-r="water"><i></i><span>Water</span></li>
-          <li data-r="steps"><i></i><span>Steps</span></li>
-          <li data-r="sleep"><i></i><span>Sleep</span></li>
-          <li data-r="proof"><i></i><span>Proof photo</span></li>
-        </ul>
-        <p class="line"><small>Your coach</small><span class="txt">"Day 1. Small fire, big start."</span></p>
+        <div class="dayrow">
+          <div class="day"><small>Day</small><span class="num">1</span></div>
+          <div class="side">
+            <p class="line"><img src="assets/img/people/coach.webp" alt=""><span><small>Your coach</small><span class="txt"></span></span></p>
+            <div class="blocks" aria-hidden="true"><i>Shake · 25g</i><i>Chicken · 30g</i><i>Yogurt · 15g</i><i>Eggs · 12g</i></div>
+          </div>
+        </div>
+        <div class="g30" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       </div>
     </div>
-
-    <div class="finale">
-      <p class="kicker dark">Day 30</p>
-      <h2>You kept<br><em>the fire.</em></h2>
-      <p>30 days kept. Stronger than Day 1, and you can see it in your numbers.</p>
-      <div class="stores"><a class="badge dark" href="#get" data-store="ios" aria-label="Download on the App Store"><svg class="ap" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a><a class="badge dark" href="#get" data-store="android" aria-label="Get it on Google Play"><svg class="gp" viewBox="0 0 24 26" aria-hidden="true"><path d="M1.5 1.2 13.4 13 1.5 24.8c-.3-.2-.5-.6-.5-1.1V2.3c0-.5.2-.9.5-1.1z" fill="#00a0ff"/><path d="M17.4 17 13.4 13l4-4 4.8 2.7c1.4.8 1.4 2 0 2.8z" fill="#ffbc00"/><path d="M17.4 17 13.4 13 1.5 24.8c.4.4 1.1.5 1.9.1z" fill="#ff3a44"/><path d="M17.4 9 3.4 1.1C2.6.7 1.9.8 1.5 1.2L13.4 13z" fill="#00f076"/></svg><span><small>COMING SOON ON</small><b>Google Play</b></span></a></div>
-    </div>
   </div>
 </section>
 
-<!-- 3 THE SIX RULES -->
-<section class="sec rules-sec" id="rules">
-  <p class="eyebrow">The rules</p>
-  <h2>Six small things.<br><em>Every day.</em></h2>
-  <div class="rule-cards">
-    <article><b>01</b><h3>Workout</h3><p>Your plan, 2-4 days a week, 20-30 minutes. Rest days count as kept.</p></article>
-    <article><b>02</b><h3>Protein</h3><p>Hit your own daily target. Tap meal blocks, no grams to count.</p></article>
-    <article><b>03</b><h3>Water</h3><p>Fill your glasses through the day.</p></article>
-    <article><b>04</b><h3>Steps</h3><p>7,000 steps. A walk with a friend counts.</p></article>
-    <article><b>05</b><h3>Sleep</h3><p>Give your muscles the night they need.</p></article>
-    <article><b>06</b><h3>Proof</h3><p>One live photo or short video. Your own before-and-after.</p></article>
-  </div>
-</section>
-
-<!-- 4 BUILT TO FINISH (kind, not punishing) -->
-<section class="sec light finish" id="finish">
-  <p class="eyebrow">Built to finish</p>
-  <h2>Tough on habits.<br>Kind to you.</h2>
-  <div class="finish-grid">
-    <article><h3>Rest days are part of it</h3><p>Your plan has rest days. They keep your streak, they don't break it.</p></article>
-    <article><h3>Short day? It still counts</h3><p>No time? Do the 15-minute version and keep your day.</p></article>
-    <article><h3>Missed one? Be honest</h3><p>Own it, keep going. No shouting, no starting over from scratch.</p></article>
-    <article><h3>Start where you are</h3><p>Home, bands or gym. Beginner or back after a break.</p></article>
-  </div>
-  <figure class="finish-photo"><img src="assets/img/people/demonstrator-portrait.webp" alt="Your FireKeep demonstrator on a mountain deck" loading="lazy"></figure>
-</section>
-
-<!-- 5 HOW YOU WIN IT -->
-<section class="sec how" id="win">
-  <p class="eyebrow">How you win it</p>
-  <h2>Everything you need<br><em>to keep it.</em></h2>
-  <ol class="steps">
-    <li><img src="assets/img/scr-welcome.webp" alt="FireKeep welcome screen" loading="lazy"><b>1</b><h3>Your plan in 2 minutes</h3><p>Your days, your gear, your level.</p></li>
-    <li><img src="assets/img/scr-today.webp" alt="The FireKeep Today screen with the six rules" loading="lazy"><b>2</b><h3>Today, on one screen</h3><p>Your workout and the six rules. Tick them off.</p></li>
-    <li><img src="assets/img/scr-fuel.webp" alt="The FireKeep protein and water screen" loading="lazy"><b>3</b><h3>Protein made easy</h3><p>A daily target and quick logging.</p></li>
-  </ol>
-</section>
-
-<!-- 6 EVERY MOVE -->
-<section class="sec moves" id="moves">
-  <p class="eyebrow">Every move, shown clearly</p>
-  <h2>Watch it.<br><em>Then do it.</em></h2>
-  <div class="cards">
-    <figure class="slot"><img src="assets/img/clips/slot-sit-to-stand.webp" alt="Sit-to-stand, shown by the demonstrator" loading="lazy"><figcaption><b>Sit-to-stand</b>Legs · a chair is all you need</figcaption></figure>
-    <figure class="slot"><img src="assets/img/clips/slot-glute-bridge.webp" alt="Glute bridge, shown by the demonstrator" loading="lazy"><figcaption><b>Glute bridge</b>Hips and back · on the floor</figcaption></figure>
-    <figure class="slot"><img src="assets/img/clips/slot-band-pull-apart.webp" alt="Band pull-apart, shown by the demonstrator" loading="lazy"><figcaption><b>Band pull-apart</b>Shoulders · one band</figcaption></figure>
-  </div>
-</section>
-
-<!-- 7 PROTEIN (try it) -->
-<section class="sec protein" id="protein">
-  <p class="eyebrow">Rule 2, try it here</p>
-  <h2>Tap your<br><em>protein.</em></h2>
-  <div class="pdemo">
-    <div class="ring" role="img" aria-label="Protein ring"><div><span class="pg">0</span><small>of 120 g</small></div></div>
-    <div class="pblocks">
-      <button type="button" data-g="12">Eggs <b>12g</b></button>
-      <button type="button" data-g="15">Yogurt <b>15g</b></button>
-      <button type="button" data-g="30">Chicken <b>30g</b></button>
-      <button type="button" data-g="25">Shake <b>25g</b></button>
-      <button type="button" data-g="18">Lentils <b>18g</b></button>
-      <button type="button" class="reset">Reset</button>
-    </div>
-  </div>
-  <p class="note">That's how the app works: tap what you ate, the ring fills. No grams to count.</p>
-  <p class="coachline"><img src="assets/img/people/coach.webp" alt=""><span><small>Your coach</small>"Eggs are a block. Chocolate is a mood."</span></p>
-</section>
-
-<!-- 8 COACH + DEMONSTRATOR -->
-<section class="sec coach" id="coach">
-  <div class="pair">
-    <figure><img src="assets/img/people/coach.webp" alt="Your FireKeep coach" loading="lazy"><figcaption><b>Your coach</b>Checks in every day of the 30.</figcaption></figure>
-    <figure><img src="assets/img/people/demonstrator-home.webp" alt="Your FireKeep demonstrator doing a glute bridge" loading="lazy"><figcaption><b>Your demonstrator</b>Shows every move, rep by rep.</figcaption></figure>
-  </div>
-  <h2>You're not<br><em>doing it alone.</em></h2>
-  <p class="lead">"Rest 60 seconds. Not 61. I'm watching." Your coach cheers the small wins and keeps your streak alive.</p>
-</section>
-
-<!-- 9 REST DAY BREAK (playful) -->
-<section class="sec cats" id="cats">
-  <p class="eyebrow">Rest day energy</p>
-  <h2>Rest days are<br><em>part of the plan.</em></h2>
-  <p class="lead">Even the cats agree.</p>
-  <div class="catrow">
-    <figure class="catslot"><span>Cat clip coming</span><figcaption>Stretching, professionally</figcaption></figure>
-    <figure class="catslot"><span>Cat clip coming</span><figcaption>Recovery: 16 hours</figcaption></figure>
-    <figure class="catslot"><span>Cat clip coming</span><figcaption>Protein? Only if it's tuna</figcaption></figure>
-  </div>
-</section>
-
-<!-- 10 PRIVATE -->
-<section class="sec private">
-  <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="21" width="28" height="21" rx="3" fill="#ff3b1f"/><path d="M16 21v-6a8 8 0 0 1 16 0v6" fill="none" stroke="#f6f0e6" stroke-width="4"/></svg>
-  <h2>Private by design.</h2>
-  <p class="lead">No account. No ads. Your data stays on your phone.</p>
-</section>
-
-<!-- 11 FAQ (light) -->
-<section class="sec light faq" id="faq">
-  <h2>Questions</h2>
-  <details><summary>What is Keep 30?</summary><p>A 30-day challenge inside FireKeep. Every day you keep six small rules: your workout on plan days, protein, water, steps, sleep and one proof photo.</p></details>
-  <details><summary>Is it like 75 Hard?</summary><p>It's built on the same idea, daily rules and a streak, but made for real life: rest days count, short days count, and missing one doesn't wipe your progress.</p></details>
-  <details><summary>Is FireKeep free?</summary><p>Yes. FireKeep is free on iPhone and Android.</p></details>
-  <details><summary>Do I need equipment?</summary><p>No. Start with bodyweight and a chair. Add a band or use a gym when you're ready.</p></details>
-  <details><summary>I'm over 50 / a beginner. Is it for me?</summary><p>Yes. You pick your level and your days, and every move is shown clearly. Check with your doctor before starting a new exercise or nutrition plan.</p></details>
-  <p class="disclaimer">FireKeep is a fitness app and does not give medical advice. Check with your doctor before starting a new exercise or nutrition plan.</p>
-</section>
-
-<!-- 12 FINAL CALL -->
-<section class="final" id="get">
-  <p class="kicker dark">Day 1 is today</p>
+<!-- 3 KEEP THE FIRE -->
+<section class="fire" aria-label="Keep the fire">
   <h2>Keep<br><em>the fire.</em></h2>
-  <div class="final-row"><div class="stores"><a class="badge dark" href="#get" data-store="ios" aria-label="Download on the App Store"><svg class="ap" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a><a class="badge dark" href="#get" data-store="android" aria-label="Get it on Google Play"><svg class="gp" viewBox="0 0 24 26" aria-hidden="true"><path d="M1.5 1.2 13.4 13 1.5 24.8c-.3-.2-.5-.6-.5-1.1V2.3c0-.5.2-.9.5-1.1z" fill="#00a0ff"/><path d="M17.4 17 13.4 13l4-4 4.8 2.7c1.4.8 1.4 2 0 2.8z" fill="#ffbc00"/><path d="M17.4 17 13.4 13 1.5 24.8c.4.4 1.1.5 1.9.1z" fill="#ff3a44"/><path d="M17.4 9 3.4 1.1C2.6.7 1.9.8 1.5 1.2L13.4 13z" fill="#00f076"/></svg><span><small>COMING SOON ON</small><b>Google Play</b></span></a></div><div class="qr" aria-hidden="true"><i></i><span>Scan with your<br>phone camera</span></div></div>
-  <p class="small">Free · No account · iPhone and Android</p>
+</section>
+
+<!-- 4 THE APP -->
+<section class="sec app" aria-label="The app">
+  <div class="shots">
+    <img src="assets/img/app/01-challenge.webp" alt="Your challenge: daily rules, one streak" width="660" height="1434" loading="lazy">
+    <img src="assets/img/app/02-rules.webp" alt="Small rules, big change: train, protein, water, steps, sleep" width="660" height="1434" loading="lazy">
+    <img src="assets/img/app/05-protein.webp" alt="Protein made simple: a daily target in simple meals" width="660" height="1434" loading="lazy">
+    <img src="assets/img/app/06-fuel.webp" alt="Fuel at a glance: protein, carbs, fat and water" width="660" height="1434" loading="lazy">
+  </div>
+</section>
+
+<!-- 5 MOVES -->
+<section class="sec moves" aria-label="Moves">
+  <div class="cards">
+    <figure><img src="assets/img/clips/slot-sit-to-stand.webp" alt="Sit-to-stand" loading="lazy"><figcaption>Sit-to-stand</figcaption></figure>
+    <figure><img src="assets/img/clips/slot-glute-bridge.webp" alt="Glute bridge" loading="lazy"><figcaption>Glute bridge</figcaption></figure>
+    <figure><img src="assets/img/clips/slot-band-pull-apart.webp" alt="Band pull-apart" loading="lazy"><figcaption>Band pull-apart</figcaption></figure>
+  </div>
+</section>
+
+<!-- 6 DOWNLOAD -->
+<section class="final" id="get">
+  <h2>Start<br><em>today.</em></h2>
+  <div class="final-row"><div class="stores"><a class="badge dark" href="#get" data-store="ios" aria-label="Download on the App Store"><svg class="ap" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a><span class="badge soon dark" data-store="android" aria-label="Google Play, coming soon"><svg class="gp" viewBox="0 0 24 26" aria-hidden="true"><path d="M1.5 1.2 13.4 13 1.5 24.8c-.3-.2-.5-.6-.5-1.1V2.3c0-.5.2-.9.5-1.1z" fill="#00a0ff"/><path d="M17.4 17 13.4 13l4-4 4.8 2.7c1.4.8 1.4 2 0 2.8z" fill="#ffbc00"/><path d="M17.4 17 13.4 13 1.5 24.8c.4.4 1.1.5 1.9.1z" fill="#ff3a44"/><path d="M17.4 9 3.4 1.1C2.6.7 1.9.8 1.5 1.2L13.4 13z" fill="#00f076"/></svg><span><small>Coming soon</small><b>Google Play</b></span></span></div><div class="qr" aria-hidden="true"><i></i><span>Scan with your<br>iPhone camera</span></div></div>
+  <p class="small">Free · No account · Your data stays on your phone</p>
 </section>
 </main>
 
 <footer class="foot">
   <a class="wm" href="#top"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#000"/><path d="M15 15h70v17H36v6h30v14H36v33H15z" fill="#f3f0eb"/><rect x="42" y="57" width="43" height="28" fill="#ff3b1f"/></svg><span>FIREKEEP</span></a>
   <p><a href="https://firekeep.app/privacy.html">Privacy</a> · <a href="https://firekeep.app/support.html">Support</a> · <a href="mailto:hello@firekeep.app">hello@firekeep.app</a></p>
-  <p class="small">© 2026 VidZenith L.L.C-FZ, Dubai</p>
+  <p class="small">FireKeep does not give medical advice. Check with your doctor before starting.<br>© 2026 VidZenith L.L.C-FZ, Dubai</p>
 </footer>
 
-<div class="sticky-cta"><div class="stores"><a class="badge mini" href="#get" data-store="ios" aria-label="Download on the App Store"><svg class="ap" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a><a class="badge mini" href="#get" data-store="android" aria-label="Get it on Google Play"><svg class="gp" viewBox="0 0 24 26" aria-hidden="true"><path d="M1.5 1.2 13.4 13 1.5 24.8c-.3-.2-.5-.6-.5-1.1V2.3c0-.5.2-.9.5-1.1z" fill="#00a0ff"/><path d="M17.4 17 13.4 13l4-4 4.8 2.7c1.4.8 1.4 2 0 2.8z" fill="#ffbc00"/><path d="M17.4 17 13.4 13 1.5 24.8c.4.4 1.1.5 1.9.1z" fill="#ff3a44"/><path d="M17.4 9 3.4 1.1C2.6.7 1.9.8 1.5 1.2L13.4 13z" fill="#00f076"/></svg><span><small>COMING SOON ON</small><b>Google Play</b></span></a></div></div>
+<div class="sticky-cta"><div class="stores"><a class="badge mini" href="#get" data-store="ios" aria-label="Download on the App Store"><svg class="ap" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a><span class="badge soon mini" data-store="android" aria-label="Google Play, coming soon"><svg class="gp" viewBox="0 0 24 26" aria-hidden="true"><path d="M1.5 1.2 13.4 13 1.5 24.8c-.3-.2-.5-.6-.5-1.1V2.3c0-.5.2-.9.5-1.1z" fill="#00a0ff"/><path d="M17.4 17 13.4 13l4-4 4.8 2.7c1.4.8 1.4 2 0 2.8z" fill="#ffbc00"/><path d="M17.4 17 13.4 13 1.5 24.8c.4.4 1.1.5 1.9.1z" fill="#ff3a44"/><path d="M17.4 9 3.4 1.1C2.6.7 1.9.8 1.5 1.2L13.4 13z" fill="#00f076"/></svg><span><small>Coming soon</small><b>Google Play</b></span></span></div></div>
 
 <script src="app.js" defer></script>
 </body>
