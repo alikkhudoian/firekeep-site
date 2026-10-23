@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="proto">Prototype · not live</div>
 
 <header class="nav">
   <a class="wm" href="#top" aria-label="FireKeep home"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#000"/><path d="M15 15h70v17H36v6h30v14H36v33H15z" fill="#f3f0eb"/><rect x="42" y="57" width="43" height="28" fill="#ff3b1f"/></svg><span>FIREKEEP</span></a>
@@ -25,7 +26,7 @@
   <!-- transparent cut-out (hand + iPhone + wrist). --phone-x / --phone-y in styles.css = where the phone's centre sits in this image -->
   <figure class="hand">
     <div class="glow" aria-hidden="true"></div>
-    <img src="assets/img/app/hero-hand.webp" alt="A hand holding an iPhone with the FireKeep Today screen" width="900" height="1600" fetchpriority="high">
+    <img src="assets/img/app/hero-hand.webp" srcset="assets/img/app/hero-hand.webp 935w, assets/img/app/hero-hand@2x.webp 1400w" sizes="(min-width:1000px) 600px, 110vw" alt="A hand holding an iPhone with the FireKeep Today screen" width="935" height="1600" fetchpriority="high">
   </figure>
   <div class="stores"><a class="badge" href="#get" data-store="ios" aria-label="Download on the App Store"><svg class="ap" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a><span class="badge soon" data-store="android" aria-label="Google Play, coming soon"><svg class="gp" viewBox="0 0 24 26" aria-hidden="true"><path d="M1.5 1.2 13.4 13 1.5 24.8c-.3-.2-.5-.6-.5-1.1V2.3c0-.5.2-.9.5-1.1z" fill="#00a0ff"/><path d="M17.4 17 13.4 13l4-4 4.8 2.7c1.4.8 1.4 2 0 2.8z" fill="#ffbc00"/><path d="M17.4 17 13.4 13 1.5 24.8c.4.4 1.1.5 1.9.1z" fill="#ff3a44"/><path d="M17.4 9 3.4 1.1C2.6.7 1.9.8 1.5 1.2L13.4 13z" fill="#00f076"/></svg><span><small>Coming soon</small><b>Google Play</b></span></span></div>
 </section>
@@ -46,7 +47,7 @@
         <div class="dayrow">
           <div class="day"><small>Day</small><span class="num">1</span></div>
           <div class="side">
-            <p class="line"><img src="assets/img/people/coach.webp" alt=""><span><small>Your coach</small><span class="txt"></span></span></p>
+            <p class="line"><img src="assets/img/people/coach-avatar.webp" alt="" width="40" height="40"><span><small>Your coach</small><span class="txt"></span></span></p>
             <div class="blocks" aria-hidden="true"><i>Shake · 25g</i><i>Chicken · 30g</i><i>Yogurt · 15g</i><i>Eggs · 12g</i></div>
           </div>
         </div>
@@ -62,15 +63,11 @@
 </section>
 
 <!-- 4 THE APP: one phone stays pinned while you scroll; each step swaps the screen and the caption.
-     Review hook: #app=1..5 jumps to a step. Reduced motion: a plain list. -->
+     Review hook: #app=1..4 jumps to a step. Reduced motion: a plain list. -->
 <section class="tour" id="app" aria-label="The app">
   <div class="tour-stage">
     <div class="bezel" aria-hidden="true"></div>
     <article class="step on">
-      <div class="cap"><h3>Your day, lit&nbsp;up.</h3><p>Small daily rules. Tick them off one by one.</p></div>
-      <div class="scr"><img src="assets/img/app/hero-today.webp" alt="Today screen: your daily rules for training, protein, water, steps and sleep" width="720" height="1564" loading="lazy"></div>
-    </article>
-    <article class="step">
       <div class="cap"><h3>Keep the streak.</h3><p>Pick a challenge. Light up a square every day.</p></div>
       <div class="scr"><img src="assets/img/app/tour-challenges.webp" alt="Challenges screen: your streak, one square for each day" width="720" height="1564" loading="lazy"></div>
     </article>
@@ -83,19 +80,20 @@
       <div class="scr"><img src="assets/img/app/tour-train.webp" alt="Train screen: this week's plan, with gym, home and outdoor options" width="720" height="1564" loading="lazy"></div>
     </article>
     <article class="step">
-      <div class="cap"><h3>Protein, made simple.</h3><p>Protein, carbs, fat and water at a glance.</p></div>
+      <div class="cap"><h3>Protein first.</h3><p>Protein, carbs, fat and water at a glance.</p></div>
       <div class="scr"><img src="assets/img/app/tour-fuel.webp" alt="Fuel screen: protein, carbs, fat and water for today" width="720" height="1564" loading="lazy"></div>
     </article>
-    <div class="dots" role="group" aria-label="App tour steps"><button type="button" aria-label="Today" aria-current="step"></button><button type="button" aria-label="Challenges"></button><button type="button" aria-label="Workout"></button><button type="button" aria-label="Train"></button><button type="button" aria-label="Fuel"></button></div>
+    <div class="dots" role="group" aria-label="App tour steps"><button type="button" aria-label="Challenges" aria-current="step"></button><button type="button" aria-label="Workout"></button><button type="button" aria-label="Train"></button><button type="button" aria-label="Fuel"></button></div>
   </div>
 </section>
 
 <!-- 5 MOVES -->
 <section class="sec moves" aria-label="Moves">
+  <!-- the app's own move clips (looping, silent); a still frame mid-move when Reduce Motion is on -->
   <div class="cards">
-    <figure><img src="assets/img/clips/slot-sit-to-stand.webp" alt="Sit-to-stand" loading="lazy"><figcaption>Sit-to-stand</figcaption></figure>
-    <figure><img src="assets/img/clips/slot-glute-bridge.webp" alt="Glute bridge" loading="lazy"><figcaption>Glute bridge</figcaption></figure>
-    <figure><img src="assets/img/clips/slot-band-pull-apart.webp" alt="Band pull-apart" loading="lazy"><figcaption>Band pull-apart</figcaption></figure>
+    <figure><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/img/clips/move-sit-to-stand-still.webp"><img src="assets/img/clips/move-sit-to-stand.webp" alt="Sit-to-stand: sitting down to a chair and standing back up" width="720" height="380" loading="lazy"></picture><figcaption>Sit-to-stand</figcaption></figure>
+    <figure><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/img/clips/move-glute-bridge-still.webp"><img src="assets/img/clips/move-glute-bridge.webp" alt="Glute bridge: lying on a mat, lifting the hips" width="720" height="380" loading="lazy"></picture><figcaption>Glute bridge</figcaption></figure>
+    <figure><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/img/clips/move-band-pull-apart-still.webp"><img src="assets/img/clips/move-band-pull-apart.webp" alt="Band pull-apart: arms wide, pulling a band across the chest" width="720" height="380" loading="lazy"></picture><figcaption>Band pull-apart</figcaption></figure>
   </div>
 </section>
 
