@@ -38,17 +38,18 @@ em{font-style:normal;color:var(--heat)}
 .badge.mini b{font-size:16px}.badge.mini small{font-size:9px}.badge.mini .ap{width:20px;height:20px}.badge.mini .gp{width:18px;height:20px}
 @media (max-width:420px){.stores .badge:not(.mini){padding:8px 13px 8px 10px;min-height:48px;gap:8px}.stores .badge:not(.mini) b{font-size:17px}.stores .badge:not(.mini) .ap{width:22px;height:22px}.stores .badge:not(.mini) .gp{width:20px;height:22px}}
 
-/* hero */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px var(--gut) 64px;overflow:hidden;
-  background:radial-gradient(90% 55% at 70% 110%,rgba(246,178,107,.16),transparent 70%),radial-gradient(60% 40% at 15% 0%,rgba(31,42,31,.55),transparent 70%)}
-.spark{position:absolute;left:50%;top:30svh;width:0;height:0}
-.ember{position:absolute;left:-22px;top:-14px;width:44px;height:28px;background:var(--heat);animation:breathe 3.2s ease-in-out infinite}
-.spark b{position:absolute;left:var(--x);top:0;width:4px;height:4px;background:#ff8a3d;border-radius:1px;opacity:0;animation:rise 4s linear infinite;animation-delay:var(--d)}
-@keyframes breathe{0%,100%{box-shadow:0 0 26px 6px rgba(255,59,31,.5),0 0 80px 26px rgba(255,59,31,.18)}50%{box-shadow:0 0 42px 12px rgba(255,59,31,.72),0 0 130px 46px rgba(255,59,31,.3)}}
-@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-130px) translateX(6px);opacity:0}}
-.hero h1{font-size:clamp(88px,27vw,190px)}
-.sub{font-size:18px;color:#d6d0c7;margin:18px 0 26px}
-.scroll-hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#6f685f;margin:0}
+/* hero: headline, the app on a phone (centered), store badges */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:78px var(--gut) 28px;overflow:hidden;
+  background:radial-gradient(70% 45% at 50% 62%,rgba(255,59,31,.22),transparent 70%),radial-gradient(60% 40% at 15% 0%,rgba(31,42,31,.5),transparent 70%)}
+.hero h1{font-size:clamp(54px,15vw,150px)}
+.sub{font-size:16px;color:#d6d0c7;margin:10px 0 22px}
+.device{position:relative;margin:0 0 24px;width:clamp(190px,calc((100svh - 330px)*.46),340px)}
+.glow{position:absolute;left:50%;top:55%;width:150%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,59,31,.7),rgba(255,59,31,.25) 50%,transparent 75%);filter:blur(6px);animation:breathe 4s ease-in-out infinite;pointer-events:none}
+@keyframes breathe{0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(.96)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.04)}}
+.frame{position:relative;border-radius:15% / 6.9%;padding:3%;background:linear-gradient(145deg,#3a3633,#141210 40%,#2a2724);box-shadow:0 0 0 1px #4a4541,0 30px 70px rgba(0,0,0,.65)}
+.screen{width:100%;height:auto;border-radius:12.6% / 5.8%;display:block}
+.hero .stores{justify-content:center}
 
 /* story: the ember grows into the demonstrator, the days fill */
 .story{position:relative;height:500svh}
@@ -112,10 +113,9 @@ em{font-style:normal;color:var(--heat)}
 @media (min-width:900px){
   :root{--gut:56px}
   .sticky-cta{display:none}
-  .hero{justify-content:center}
-  .spark{left:72%;top:48%}
-  .ember{left:-40px;top:-26px;width:80px;height:52px}
-  .hero h1{font-size:min(200px,24vh)}
+  .hero{padding-top:96px}
+  .hero h1{font-size:min(130px,13vh)}
+  .device{width:clamp(220px,calc((100svh - 360px)*.46),340px)}
   .stage-grid{flex-direction:row;align-items:center;justify-content:center;gap:64px;padding:90px var(--gut) 40px}
   .win{--W:min(46vw,640px);margin:0}
   .panel{width:380px}
@@ -128,7 +128,7 @@ em{font-style:normal;color:var(--heat)}
 /* reduced motion: the story becomes a plain section */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .ember,.spark b{animation:none}
+  .glow{animation:none}
   .story{height:auto}
   .stage{position:relative;height:auto;min-height:100svh}
 }
